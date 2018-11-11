@@ -1,0 +1,42 @@
+/* 2018 APPLIED PUBLIC HEALTH STATISTICS BREAKFAST WORKSHOP 	*/
+/*	SAS EXAMPLE 1: BASICS OF READING AND ACCESSING DATA	*/
+
+
+/* SUMMER G. FRANK-PEARCE & TRENT L. LALONDE */
+
+
+
+/* SAS FILE FOR BASIC CALCULATIONS AND DATA MANIPULATION */
+
+
+/* SAS 9.4 HELP DOCUMENTATION AVAILABLE FROM https://support.sas.com/documentation/94/ */
+
+
+
+/* SET LIBNAME */
+libname MJ 'PATH-TO-Folder\';
+
+
+
+
+/* READING IN DATA: TEXT FILES */
+data DATA-SET-NAME;
+  infile 'PATH TO YOUR FOLDER\FILE-NAME.txt';
+  input VARIABLE-NAMES-SPACES-BETWEEN;
+run;
+
+
+
+/* READING IN DATA: CSV FILES */
+proc import datafile='PATH TO YOUR FOLDER\FILE-NAME.csv'
+	out=DATA-SET-NAME
+	dbms=csv replace;
+	getnames=yes;
+run;
+
+
+
+/* READING IN DATA: sas7bdat FILE */
+data DATA-SET-NAME;
+	set 'PATH TO YOUR FOLDER\FILE-NAME.sas7bdat';
+Run;
